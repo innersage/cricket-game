@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <main>
+      <div id="heading">
+        <h1>Bat Ball Stump Game</h1>
+      </div>
+      <div id="game_body">
+        <button class="button" onclick="choiceBat()" 
+        >Bat</button>
+        <button class="button" onclick="choiceBall()"
+        >Ball</button>
+        <button class="button" onclick="choiceStump()"
+        >Stump</button>
+      </div>
+      <div class="output">
+          <p id="refer"></p>
+        </div>
+        <div class="endTheGame">
+          <button class="end" onclick="endGame()"
+        >End game</button></div>
+       
+    </main>  
+    <script src="game.js"></script>
+</body>
+</html> 
