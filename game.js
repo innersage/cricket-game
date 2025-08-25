@@ -1,6 +1,6 @@
 
-alert("Welcome to your favoprite game");
-let score={
+alert("Welcome to your favorite game");
+let score=JSON.parse(localStorage.getItem('score')) ||{
     win:0,
     loss:0,
     tie:0,
@@ -27,6 +27,8 @@ function choiceBat(){
         result=`Computer won`;
         score.loss++;
     }
+    //save to local storage after updating 
+    localStorage.setItem('score', JSON.stringify(score));
     document.querySelector('#refer').innerHTML = `
   Your choice is <strong>Bat</strong>.<br>
   Computer choice is <strong>${computerChoice}</strong>.<br>
@@ -56,6 +58,7 @@ function choiceBall(){
         result=`You won`;
         score.win++;
     }
+    localStorage.setItem('score', JSON.stringify(score));
     document.querySelector('#refer').innerHTML = `
   Your choice is <strong>Ball</strong>.<br>
   Computer choice is <strong>${computerChoice}</strong>.<br>
@@ -85,6 +88,7 @@ function choiceStump(){
         result=`Match tie`;
         score.tie++;
     }
+    localStorage.setItem('score', JSON.stringify(score));
     document.querySelector('#refer').innerHTML = `
   Your choice is <strong>Stump</strong>.<br>
   Computer choice is <strong>${computerChoice}</strong>.<br>
@@ -95,4 +99,12 @@ function choiceStump(){
 function endGame(){
     let result=` `;
     document.querySelector('#refer').innerHTML = `${result}`;
+}
+function resetGame(){
+    score = { win:0, loss:0, tie:0 };
+    localStorage.setItem('score', JSON.stringify(score));
+    document.querySelector('#refer').innerHTML = `
+      Game reset. Let's play again! <br>
+      Win:${score.win}<br>Loss:${score.loss}<br>Tie:${score.tie}
+    `;
 }
