@@ -59,7 +59,7 @@ function choiceBall(){
 
     let result;
     if(computerChoice==='Bat'){
-        result=`computer won`;
+        result=`Computer won`;
         score.loss++;
     }else if(computerChoice==='Ball'){
         result=`Match tie`;
