@@ -33,7 +33,7 @@
 }
 .output p{
     margin:10px 0px;
-    background-color:red;
+    /* background-color:red; */
     font-size: 30px;
     height: 280px;
 }

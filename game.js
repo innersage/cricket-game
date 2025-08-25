@@ -27,6 +27,16 @@ function choiceBat(){
         result=`Computer won`;
         score.loss++;
     }
+    const refer = document.getElementById("refer");
+
+    if (result.includes("You won")) {
+    refer.style.backgroundColor = "pink";
+    } else if (result.includes("Computer won")) {
+    refer.style.backgroundColor = "red";
+    } else if (result.includes("Match tie")) {
+    refer.style.backgroundColor = "lightblue";
+    }
+    
     //save to local storage after updating 
     localStorage.setItem('score', JSON.stringify(score));
     document.querySelector('#refer').innerHTML = `
@@ -58,6 +68,15 @@ function choiceBall(){
         result=`You won`;
         score.win++;
     }
+    const refer = document.getElementById("refer");
+
+    if (result.includes("You won")) {
+    refer.style.backgroundColor = "pink";
+    } else if (result.includes("Computer won")) {
+    refer.style.backgroundColor = "red";
+    } else if (result.includes("Match tie")) {
+    refer.style.backgroundColor = "lightblue";
+    }
     localStorage.setItem('score', JSON.stringify(score));
     document.querySelector('#refer').innerHTML = `
   Your choice is <strong>Ball</strong>.<br>
@@ -88,6 +107,16 @@ function choiceStump(){
         result=`Match tie`;
         score.tie++;
     }
+    const refer = document.getElementById("refer");
+
+    if (result.includes("You won")) {
+    refer.style.backgroundColor = "pink";
+    } else if (result.includes("Computer won")) {
+    refer.style.backgroundColor = "red";
+    } else if (result.includes("Match tie")) {
+    refer.style.backgroundColor = "lightblue";
+    }
+
     localStorage.setItem('score', JSON.stringify(score));
     document.querySelector('#refer').innerHTML = `
   Your choice is <strong>Stump</strong>.<br>
