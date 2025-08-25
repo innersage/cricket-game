@@ -128,9 +128,12 @@ function choiceStump(){
 function endGame(){
     let result=` `;
     document.querySelector('#refer').innerHTML = `${result}`;
+    refer.style.backgroundColor = "white";
+
 }
 function resetGame(){
     score = { win:0, loss:0, tie:0 };
+    refer.style.backgroundColor = "white";
     localStorage.setItem('score', JSON.stringify(score));
     document.querySelector('#refer').innerHTML = `
       Game reset. Let's play again! <br>
